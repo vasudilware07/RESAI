@@ -1,0 +1,71 @@
+{
+  "Logistic Regression": {
+    "gender": {
+      "Positive Rate (Female)": 0.0862,
+      "Positive Rate (Male)": 0.0899,
+      "TPR (Female)": 0.375,
+      "TPR (Male)": 0.3871,
+      "Disparate Impact Ratio": 0.9591,
+      "Statistical Parity Difference": -0.0037
+    },
+    "age": {
+      "Positive Rate (Young (18-30))": 0.1688,
+      "Positive Rate (Senior (31+))": 0.0599,
+      "TPR (Young (18-30))": 0.5,
+      "TPR (Senior (31+))": 0.3103,
+      "Disparate Impact Ratio": 2.8182,
+      "Statistical Parity Difference": 0.1089
+    },
+    "fairlearn_gender": {
+      "Demographic Parity Diff": 0.0037,
+      "Demographic Parity Ratio": 0.9591,
+      "Equalized Odds Diff": 0.0128
+    }
+  },
+  "Random Forest": {
+    "gender": {
+      "Positive Rate (Female)": 0.0517,
+      "Positive Rate (Male)": 0.0281,
+      "TPR (Female)": 0.125,
+      "TPR (Male)": 0.0968,
+      "Disparate Impact Ratio": 1.8414,
+      "Statistical Parity Difference": 0.0236
+    },
+    "age": {
+      "Positive Rate (Young (18-30))": 0.1299,
+      "Positive Rate (Senior (31+))": 0.0046,
+      "TPR (Young (18-30))": 0.2778,
+      "TPR (Senior (31+))": 0.0,
+      "Disparate Impact Ratio": 28.1818,
+      "Statistical Parity Difference": 0.1253
+    },
+    "fairlearn_gender": {
+      "Demographic Parity Diff": 0.0236,
+      "Demographic Parity Ratio": 0.5431,
+      "Equalized Odds Diff": 0.0282
+    }
+  },
+  "Decision Tree": {
+    "gender": {
+      "Positive Rate (Female)": 0.1552,
+      "Positive Rate (Male)": 0.1011,
+      "TPR (Female)": 0.3125,
+      "TPR (Male)": 0.3226,
+      "Disparate Impact Ratio": 1.5345,
+      "Statistical Parity Difference": 0.054
+    },
+    "age": {
+      "Positive Rate (Young (18-30))": 0.2857,
+      "Positive Rate (Senior (31+))": 0.0645,
+      "TPR (Young (18-30))": 0.5556,
+      "TPR (Senior (31+))": 0.1724,
+      "Disparate Impact Ratio": 4.4286,
+      "Statistical Parity Difference": 0.2212
+    },
+    "fairlearn_gender": {
+      "Demographic Parity Diff": 0.054,
+      "Demographic Parity Ratio": 0.6517,
+      "Equalized Odds Diff": 0.0756
+    }
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "Model": "Logistic Regression",
+    "Risk": "MEDIUM",
+    "Category": "Fairness \u2013 Disparate Impact",
+    "Detail": "DI ratio = 0.959. Mild imbalance detected.",
+    "Recommendation": "Monitor in production; consider fairness constraints during training."
+  },
+  {
+    "Model": "Random Forest",
+    "Risk": "LOW",
+    "Category": "Fairness \u2013 Disparate Impact",
+    "Detail": "DI ratio = 1.841. Within acceptable range.",
+    "Recommendation": "Continue monitoring."
+  },
+  {
+    "Model": "Decision Tree",
+    "Risk": "LOW",
+    "Category": "Fairness \u2013 Disparate Impact",
+    "Detail": "DI ratio = 1.534. Within acceptable range.",
+    "Recommendation": "Continue monitoring."
+  },
+  {
+    "Model": "Logistic Regression",
+    "Risk": "LOW",
+    "Category": "Transparency",
+    "Detail": "Logistic Regression coefficients are directly interpretable.",
+    "Recommendation": "Document feature coefficients."
+  },
+  {
+    "Model": "Random Forest",
+    "Risk": "MEDIUM",
+    "Category": "Transparency",
+    "Detail": "Ensemble models (Random Forest) are not natively interpretable.",
+    "Recommendation": "Use SHAP or LIME for post-hoc explanations."
+  },
+  {
+    "Model": "Decision Tree",
+    "Risk": "LOW",
+    "Category": "Transparency",
+    "Detail": "Decision Trees are inherently interpretable.",
+    "Recommendation": "Good choice for high-stakes decisions."
+  }
+]

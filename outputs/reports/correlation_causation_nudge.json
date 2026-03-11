@@ -1,0 +1,474 @@
+{
+  "correlation": {
+    "target_correlations": {
+      "OverTime": 0.2461,
+      "TotalWorkingYears": -0.1711,
+      "JobLevel": -0.1691,
+      "MaritalStatus": 0.1621,
+      "YearsInCurrentRole": -0.1605,
+      "MonthlyIncome": -0.1598,
+      "Age": -0.1592,
+      "YearsWithCurrManager": -0.1562,
+      "StockOptionLevel": -0.1371,
+      "YearsAtCompany": -0.1344,
+      "AgeGroup": -0.1322,
+      "JobInvolvement": -0.13,
+      "JobSatisfaction": -0.1035,
+      "EnvironmentSatisfaction": -0.1034,
+      "DistanceFromHome": 0.0779,
+      "JobRole": 0.0672,
+      "Department": 0.064,
+      "WorkLifeBalance": -0.0639,
+      "TrainingTimesLastYear": -0.0595,
+      "DailyRate": -0.0567,
+      "IncomeGroup": -0.0488,
+      "RelationshipSatisfaction": -0.0459,
+      "NumCompaniesWorked": 0.0435,
+      "YearsSinceLastPromotion": -0.033,
+      "Education": -0.0314,
+      "Gender": 0.0295,
+      "Gender_Binary": 0.0295,
+      "EducationField": 0.0268,
+      "MonthlyRate": 0.0152,
+      "PercentSalaryHike": -0.0135,
+      "HourlyRate": -0.0068,
+      "PerformanceRating": 0.0029,
+      "BusinessTravel": 0.0001
+    },
+    "sensitive_correlations": {
+      "Gender_Binary": {
+        "Gender": 1.0,
+        "MaritalStatus": -0.0471825923672114,
+        "TotalWorkingYears": -0.046880939477783136,
+        "OverTime": -0.04192434795198779,
+        "Department": -0.04158329022689383,
+        "YearsInCurrentRole": -0.04148272852576783,
+        "MonthlyRate": -0.0414822051199884,
+        "JobRole": -0.03972290004452619,
+        "JobLevel": -0.03940310267613356,
+        "NumCompaniesWorked": -0.03914744956027876
+      },
+      "Age": {
+        "AgeGroup": 0.9477580033907905,
+        "TotalWorkingYears": 0.6803805357911985,
+        "JobLevel": 0.5096042284323842,
+        "MonthlyIncome": 0.4978545669265801,
+        "YearsAtCompany": 0.3113087697450989,
+        "NumCompaniesWorked": 0.2996347579836926,
+        "IncomeGroup": 0.24605286610250626,
+        "YearsSinceLastPromotion": 0.2165133678516537,
+        "YearsInCurrentRole": 0.21290105556556793,
+        "Education": 0.2080337310142398
+      }
+    },
+    "vif": [
+      {
+        "Feature": "JobLevel",
+        "VIF": 11.18,
+        "R\u00b2": 0.9105
+      },
+      {
+        "Feature": "MonthlyIncome",
+        "VIF": 10.73,
+        "R\u00b2": 0.9068
+      },
+      {
+        "Feature": "Department",
+        "VIF": 1.93,
+        "R\u00b2": 0.4806
+      },
+      {
+        "Feature": "JobRole",
+        "VIF": 1.89,
+        "R\u00b2": 0.47
+      },
+      {
+        "Feature": "Age",
+        "VIF": 1.52,
+        "R\u00b2": 0.3428
+      },
+      {
+        "Feature": "NumCompaniesWorked",
+        "VIF": 1.11,
+        "R\u00b2": 0.1029
+      },
+      {
+        "Feature": "Education",
+        "VIF": 1.06,
+        "R\u00b2": 0.0555
+      },
+      {
+        "Feature": "MaritalStatus",
+        "VIF": 1.03,
+        "R\u00b2": 0.0258
+      },
+      {
+        "Feature": "HourlyRate",
+        "VIF": 1.02,
+        "R\u00b2": 0.0171
+      },
+      {
+        "Feature": "DailyRate",
+        "VIF": 1.02,
+        "R\u00b2": 0.0148
+      },
+      {
+        "Feature": "JobSatisfaction",
+        "VIF": 1.02,
+        "R\u00b2": 0.0152
+      },
+      {
+        "Feature": "BusinessTravel",
+        "VIF": 1.01,
+        "R\u00b2": 0.0106
+      },
+      {
+        "Feature": "JobInvolvement",
+        "VIF": 1.01,
+        "R\u00b2": 0.0127
+      },
+      {
+        "Feature": "Gender",
+        "VIF": 1.01,
+        "R\u00b2": 0.0136
+      },
+      {
+        "Feature": "EducationField",
+        "VIF": 1.01,
+        "R\u00b2": 0.0105
+      },
+      {
+        "Feature": "EnvironmentSatisfaction",
+        "VIF": 1.01,
+        "R\u00b2": 0.0144
+      },
+      {
+        "Feature": "DistanceFromHome",
+        "VIF": 1.01,
+        "R\u00b2": 0.012
+      },
+      {
+        "Feature": "MonthlyRate",
+        "VIF": 1.01,
+        "R\u00b2": 0.0104
+      },
+      {
+        "Feature": "OverTime",
+        "VIF": 1.01,
+        "R\u00b2": 0.0145
+      },
+      {
+        "Feature": "PercentSalaryHike",
+        "VIF": 1.01,
+        "R\u00b2": 0.0077
+      }
+    ]
+  },
+  "causation": {
+    "simpsons_paradox": {
+      "overall_direction": "Male > Female",
+      "paradox_detected": true,
+      "department_breakdown": [
+        {
+          "department": 2,
+          "female_rate": 0.2011,
+          "male_rate": 0.2101,
+          "direction": "Male > Female"
+        },
+        {
+          "department": 1,
+          "female_rate": 0.1135,
+          "male_rate": 0.1546,
+          "direction": "Male > Female"
+        },
+        {
+          "department": 0,
+          "female_rate": 0.3,
+          "male_rate": 0.1395,
+          "direction": "Female > Male"
+        }
+      ]
+    },
+    "proxy_variables": [
+      {
+        "protected_attribute": "Gender_Binary",
+        "proxy_feature": "Gender",
+        "correlation": 1.0,
+        "risk": "HIGH"
+      },
+      {
+        "protected_attribute": "Age",
+        "proxy_feature": "TotalWorkingYears",
+        "correlation": 0.6804,
+        "risk": "HIGH"
+      },
+      {
+        "protected_attribute": "Age",
+        "proxy_feature": "JobLevel",
+        "correlation": 0.5096,
+        "risk": "HIGH"
+      },
+      {
+        "protected_attribute": "Age",
+        "proxy_feature": "MonthlyIncome",
+        "correlation": 0.4979,
+        "risk": "MEDIUM"
+      },
+      {
+        "protected_attribute": "Age",
+        "proxy_feature": "YearsAtCompany",
+        "correlation": 0.3113,
+        "risk": "MEDIUM"
+      }
+    ],
+    "confounders": {
+      "raw_gender_attrition_corr": 0.0295,
+      "partial_gender_attrition_corr": 0.0213,
+      "confounders_controlled": [
+        "JobLevel",
+        "MonthlyIncome",
+        "TotalWorkingYears"
+      ]
+    }
+  },
+  "nudge": {
+    "threshold_nudge": {
+      "all_thresholds": [
+        {
+          "threshold": 0.1,
+          "accuracy": 0.6599,
+          "spd": 0.0157,
+          "abs_spd": 0.0157,
+          "female_positive_rate": 0.4483,
+          "male_positive_rate": 0.4326
+        },
+        {
+          "threshold": 0.15,
+          "accuracy": 0.7313,
+          "spd": -0.0147,
+          "abs_spd": 0.0147,
+          "female_positive_rate": 0.3448,
+          "male_positive_rate": 0.3596
+        },
+        {
+          "threshold": 0.2,
+          "accuracy": 0.7721,
+          "spd": -0.0275,
+          "abs_spd": 0.0275,
+          "female_positive_rate": 0.2759,
+          "male_positive_rate": 0.3034
+        },
+        {
+          "threshold": 0.25,
+          "accuracy": 0.7993,
+          "spd": -0.0088,
+          "abs_spd": 0.0088,
+          "female_positive_rate": 0.2328,
+          "male_positive_rate": 0.2416
+        },
+        {
+          "threshold": 0.3,
+          "accuracy": 0.8265,
+          "spd": 0.0016,
+          "abs_spd": 0.0016,
+          "female_positive_rate": 0.1983,
+          "male_positive_rate": 0.1966
+        },
+        {
+          "threshold": 0.35,
+          "accuracy": 0.8469,
+          "spd": 0.0151,
+          "abs_spd": 0.0151,
+          "female_positive_rate": 0.1724,
+          "male_positive_rate": 0.1573
+        },
+        {
+          "threshold": 0.4,
+          "accuracy": 0.8639,
+          "spd": -0.0055,
+          "abs_spd": 0.0055,
+          "female_positive_rate": 0.1293,
+          "male_positive_rate": 0.1348
+        },
+        {
+          "threshold": 0.45,
+          "accuracy": 0.8776,
+          "spd": -0.0145,
+          "abs_spd": 0.0145,
+          "female_positive_rate": 0.1034,
+          "male_positive_rate": 0.118
+        },
+        {
+          "threshold": 0.5,
+          "accuracy": 0.8741,
+          "spd": -0.0037,
+          "abs_spd": 0.0037,
+          "female_positive_rate": 0.0862,
+          "male_positive_rate": 0.0899
+        },
+        {
+          "threshold": 0.55,
+          "accuracy": 0.8741,
+          "spd": 0.0128,
+          "abs_spd": 0.0128,
+          "female_positive_rate": 0.069,
+          "male_positive_rate": 0.0562
+        },
+        {
+          "threshold": 0.6,
+          "accuracy": 0.8844,
+          "spd": 0.0012,
+          "abs_spd": 0.0012,
+          "female_positive_rate": 0.0517,
+          "male_positive_rate": 0.0506
+        },
+        {
+          "threshold": 0.65,
+          "accuracy": 0.8844,
+          "spd": 0.0124,
+          "abs_spd": 0.0124,
+          "female_positive_rate": 0.0517,
+          "male_positive_rate": 0.0393
+        },
+        {
+          "threshold": 0.7,
+          "accuracy": 0.881,
+          "spd": 0.0038,
+          "abs_spd": 0.0038,
+          "female_positive_rate": 0.0431,
+          "male_positive_rate": 0.0393
+        },
+        {
+          "threshold": 0.75,
+          "accuracy": 0.8673,
+          "spd": -0.0022,
+          "abs_spd": 0.0022,
+          "female_positive_rate": 0.0259,
+          "male_positive_rate": 0.0281
+        },
+        {
+          "threshold": 0.8,
+          "accuracy": 0.8639,
+          "spd": -0.0108,
+          "abs_spd": 0.0108,
+          "female_positive_rate": 0.0172,
+          "male_positive_rate": 0.0281
+        },
+        {
+          "threshold": 0.85,
+          "accuracy": 0.8469,
+          "spd": -0.0112,
+          "abs_spd": 0.0112,
+          "female_positive_rate": 0.0,
+          "male_positive_rate": 0.0112
+        }
+      ],
+      "optimal_threshold": 0.6,
+      "default_accuracy": 0.8741,
+      "nudged_accuracy": 0.8844,
+      "default_spd": 0.0037,
+      "nudged_spd": 0.0012
+    },
+    "counterfactuals": [
+      {
+        "candidate_index": 9,
+        "original_prediction": "Not Hired",
+        "changes_to_flip": [
+          {
+            "feature": "Age",
+            "change": 0.5,
+            "direction": "increase"
+          },
+          {
+            "feature": "DistanceFromHome",
+            "change": -1.0,
+            "direction": "decrease"
+          },
+          {
+            "feature": "HourlyRate",
+            "change": 1.0,
+            "direction": "increase"
+          },
+          {
+            "feature": "JobSatisfaction",
+            "change": 0.5,
+            "direction": "increase"
+          },
+          {
+            "feature": "MonthlyIncome",
+            "change": 0.5,
+            "direction": "increase"
+          }
+        ]
+      },
+      {
+        "candidate_index": 135,
+        "original_prediction": "Not Hired",
+        "changes_to_flip": [
+          {
+            "feature": "Age",
+            "change": 0.5,
+            "direction": "increase"
+          },
+          {
+            "feature": "BusinessTravel",
+            "change": -1.0,
+            "direction": "decrease"
+          },
+          {
+            "feature": "EducationField",
+            "change": -1.0,
+            "direction": "decrease"
+          },
+          {
+            "feature": "HourlyRate",
+            "change": -0.5,
+            "direction": "decrease"
+          },
+          {
+            "feature": "JobInvolvement",
+            "change": 1.0,
+            "direction": "increase"
+          }
+        ]
+      },
+      {
+        "candidate_index": 199,
+        "original_prediction": "Not Hired",
+        "changes_to_flip": [
+          {
+            "feature": "Age",
+            "change": 0.5,
+            "direction": "increase"
+          },
+          {
+            "feature": "MonthlyIncome",
+            "change": 0.5,
+            "direction": "increase"
+          },
+          {
+            "feature": "MonthlyRate",
+            "change": -1.0,
+            "direction": "decrease"
+          },
+          {
+            "feature": "StockOptionLevel",
+            "change": 1.0,
+            "direction": "increase"
+          },
+          {
+            "feature": "TotalWorkingYears",
+            "change": 0.5,
+            "direction": "increase"
+          }
+        ]
+      }
+    ],
+    "nudge_impact": {
+      "accuracy_change": 0.0103,
+      "fairness_improvement": 0.0025,
+      "optimal_threshold": 0.6,
+      "recommendation": "RECOMMENDED: Threshold nudging improves fairness with minimal accuracy loss. Nudge threshold from 0.5 to 0.6."
+    }
+  }
+}

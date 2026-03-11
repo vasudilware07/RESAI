@@ -1,0 +1,48 @@
+======================================================================
+  CORRELATION, CAUSATION & NUDGE ANALYSIS REPORT
+======================================================================
+
+1. CORRELATION ANALYSIS
+----------------------------------------
+  Top 5 features correlated with Hiring Decision:
+    OverTime: r = 0.2461
+    TotalWorkingYears: r = -0.1711
+    JobLevel: r = -0.1691
+    MaritalStatus: r = 0.1621
+    YearsInCurrentRole: r = -0.1605
+
+  Multicollinearity: 2 features with VIF > 10
+
+
+2. CAUSATION ANALYSIS
+----------------------------------------
+  Simpson's Paradox: DETECTED ⚠️
+  Proxy variables detected: 5
+    Gender → Gender_Binary (r=1.000)
+    TotalWorkingYears → Age (r=0.680)
+    JobLevel → Age (r=0.510)
+    MonthlyIncome → Age (r=0.498)
+    YearsAtCompany → Age (r=0.311)
+
+  Confounding Analysis:
+    Raw Gender→Attrition: r = 0.0295
+    After controlling: r = 0.0213
+
+
+3. NUDGE ANALYSIS
+----------------------------------------
+  Optimal threshold: 0.6
+  Default accuracy: 0.8741
+  Nudged accuracy: 0.8844
+  Default |SPD|: 0.0037
+  Nudged |SPD|: 0.0012
+
+  Recommendation: RECOMMENDED: Threshold nudging improves fairness with minimal accuracy loss. Nudge threshold from 0.5 to 0.6.
+
+  Counterfactual examples generated: 3
+  Example (Candidate #9):
+    increase Age → flips to 'Hired'
+    decrease DistanceFromHome → flips to 'Hired'
+    increase HourlyRate → flips to 'Hired'
+
+======================================================================

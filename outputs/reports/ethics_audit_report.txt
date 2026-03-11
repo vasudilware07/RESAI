@@ -1,0 +1,204 @@
+======================================================================
+  RESPONSIBLE AI AUDIT REPORT
+  Bias Detection & Responsible AI in AI Hiring Systems
+  Generated: 2026-03-11 13:55:38
+======================================================================
+
+1. EXECUTIVE SUMMARY
+----------------------------------------
+This audit evaluates AI models used for hiring decisions (attrition
+prediction) for fairness, transparency, and ethical compliance.
+Models evaluated: Logistic Regression, Random Forest, Decision Tree
+High-risk findings: 0
+Total risk items: 6
+
+
+2. MODEL PERFORMANCE
+----------------------------------------
+
+  Logistic Regression:
+    Accuracy: 0.8741
+    Precision: 0.6923
+    Recall: 0.383
+    F1 Score: 0.4932
+
+  Random Forest:
+    Accuracy: 0.8367
+    Precision: 0.4545
+    Recall: 0.1064
+    F1 Score: 0.1724
+
+  Decision Tree:
+    Accuracy: 0.8197
+    Precision: 0.4167
+    Recall: 0.3191
+    F1 Score: 0.3614
+
+
+3. FAIRNESS EVALUATION
+----------------------------------------
+
+  Logistic Regression:
+    [gender]
+      Positive Rate (Female): 0.0862
+      Positive Rate (Male): 0.0899
+      TPR (Female): 0.375
+      TPR (Male): 0.3871
+      Disparate Impact Ratio: 0.9591
+      Statistical Parity Difference: -0.0037
+    [age]
+      Positive Rate (Young (18-30)): 0.1688
+      Positive Rate (Senior (31+)): 0.0599
+      TPR (Young (18-30)): 0.5
+      TPR (Senior (31+)): 0.3103
+      Disparate Impact Ratio: 2.8182
+      Statistical Parity Difference: 0.1089
+    [fairlearn_gender]
+      Demographic Parity Diff: 0.0037
+      Demographic Parity Ratio: 0.9591
+      Equalized Odds Diff: 0.0128
+
+  Random Forest:
+    [gender]
+      Positive Rate (Female): 0.0517
+      Positive Rate (Male): 0.0281
+      TPR (Female): 0.125
+      TPR (Male): 0.0968
+      Disparate Impact Ratio: 1.8414
+      Statistical Parity Difference: 0.0236
+    [age]
+      Positive Rate (Young (18-30)): 0.1299
+      Positive Rate (Senior (31+)): 0.0046
+      TPR (Young (18-30)): 0.2778
+      TPR (Senior (31+)): 0.0
+      Disparate Impact Ratio: 28.1818
+      Statistical Parity Difference: 0.1253
+    [fairlearn_gender]
+      Demographic Parity Diff: 0.0236
+      Demographic Parity Ratio: 0.5431
+      Equalized Odds Diff: 0.0282
+
+  Decision Tree:
+    [gender]
+      Positive Rate (Female): 0.1552
+      Positive Rate (Male): 0.1011
+      TPR (Female): 0.3125
+      TPR (Male): 0.3226
+      Disparate Impact Ratio: 1.5345
+      Statistical Parity Difference: 0.054
+    [age]
+      Positive Rate (Young (18-30)): 0.2857
+      Positive Rate (Senior (31+)): 0.0645
+      TPR (Young (18-30)): 0.5556
+      TPR (Senior (31+)): 0.1724
+      Disparate Impact Ratio: 4.4286
+      Statistical Parity Difference: 0.2212
+    [fairlearn_gender]
+      Demographic Parity Diff: 0.054
+      Demographic Parity Ratio: 0.6517
+      Equalized Odds Diff: 0.0756
+
+
+4. ETHICAL RISK ASSESSMENT
+----------------------------------------
+
+Ethical Principles Applied:
+  • Fairness: The model should not discriminate based on protected attributes.
+  • Transparency: Model decisions should be explainable and interpretable.
+  • Accountability: Clear ownership of AI decisions and their consequences.
+  • Privacy: Personal data must be protected and minimally used.
+  • Beneficence: The AI system should actively benefit candidates and society.
+  • Non-maleficence: The system must not cause harm to any group.
+
+Identified Risks:
+
+  Risk #1:
+    Model: Logistic Regression
+    Severity: MEDIUM
+    Category: Fairness – Disparate Impact
+    Detail: DI ratio = 0.959. Mild imbalance detected.
+    Recommendation: Monitor in production; consider fairness constraints during training.
+
+  Risk #2:
+    Model: Random Forest
+    Severity: LOW
+    Category: Fairness – Disparate Impact
+    Detail: DI ratio = 1.841. Within acceptable range.
+    Recommendation: Continue monitoring.
+
+  Risk #3:
+    Model: Decision Tree
+    Severity: LOW
+    Category: Fairness – Disparate Impact
+    Detail: DI ratio = 1.534. Within acceptable range.
+    Recommendation: Continue monitoring.
+
+  Risk #4:
+    Model: Logistic Regression
+    Severity: LOW
+    Category: Transparency
+    Detail: Logistic Regression coefficients are directly interpretable.
+    Recommendation: Document feature coefficients.
+
+  Risk #5:
+    Model: Random Forest
+    Severity: MEDIUM
+    Category: Transparency
+    Detail: Ensemble models (Random Forest) are not natively interpretable.
+    Recommendation: Use SHAP or LIME for post-hoc explanations.
+
+  Risk #6:
+    Model: Decision Tree
+    Severity: LOW
+    Category: Transparency
+    Detail: Decision Trees are inherently interpretable.
+    Recommendation: Good choice for high-stakes decisions.
+
+
+5. PRIVACY ASSESSMENT
+----------------------------------------
+Differential Privacy was applied to evaluate the accuracy–privacy tradeoff.
+
+  Epsilon=0.01:
+    Accuracy: 0.5238
+
+  Epsilon=0.1:
+    Accuracy: 0.5408
+
+  Epsilon=0.5:
+    Accuracy: 0.5816
+
+  Epsilon=1.0:
+    Accuracy: 0.6293
+
+  Epsilon=5.0:
+    Accuracy: 0.8163
+
+  Epsilon=10.0:
+    Accuracy: 0.8537
+
+  Epsilon=50.0:
+    Accuracy: 0.8707
+
+
+6. RECOMMENDATIONS
+----------------------------------------
+  1. Implement bias mitigation techniques before deployment.
+  2. Use interpretable models (Decision Tree, Logistic Regression)
+     for high-stakes hiring decisions.
+  3. Apply differential privacy to protect candidate data.
+  4. Conduct regular fairness audits on production models.
+  5. Establish a human-in-the-loop review for edge cases.
+  6. Document all model decisions for accountability.
+  7. Provide candidates with explanations for decisions.
+
+
+7. REGULATORY COMPLIANCE NOTES
+----------------------------------------
+  • EU AI Act: High-risk category (employment/recruitment)
+  • US EEOC: Must satisfy 4/5ths (80%) rule for disparate impact
+  • GDPR Article 22: Right to explanation for automated decisions
+
+======================================================================
+  END OF AUDIT REPORT
+======================================================================
