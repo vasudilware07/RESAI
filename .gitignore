@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Outputs and generated files
+outputs/
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Python packaging
+dist/
+build/
+*.egg-info/
